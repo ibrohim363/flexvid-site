@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlexVid - videoni kesmasdan siqish</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2ecc71">
+<meta property="og:title" content="FlexVid">
+<meta property="og:image" content="https://ibrohim363.github.io/flexvid-site/logo.png">
+<meta name="description" content="FlexVid: bloggerlar va kontent yaratuvchilar uchun video hajmini kichraytiruvchi va formatini o'zgartiruvchi bepul Windows dasturi. Videolar kompyuteringizdan chiqmaydi.">
+<style>
+  :root{
+    --bg:#0e1116; --card:#171b22; --line:#262c36; --text:#e8ebf0; --muted:#9aa4b2;
+    --accent:#2ecc71; --accent2:#58d68d;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f6f7f9; --card:#ffffff; --line:#e1e4e9; --text:#171a20; --muted:#5b6573; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  a{color:var(--accent)}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px}
+  header{border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-weight:800;font-size:20px;letter-spacing:.3px;display:flex;align-items:center;gap:10px}
+  .logo img{width:34px;height:34px;border-radius:8px;display:block}
+  .logo span{color:var(--accent)}
+  .nav-right{display:flex;gap:14px;align-items:center}
+  .nav a.l{color:var(--muted);text-decoration:none;font-size:14px}
+  .nav a.l:hover{color:var(--text)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .lang button{background:none;border:0;color:var(--muted);padding:5px 10px;cursor:pointer;font:600 13px system-ui}
+  .lang button.on{background:var(--accent);color:#06210f}
+  .hero{padding:72px 0 56px;text-align:center}
+  .hero h1{font-size:clamp(32px,6vw,54px);line-height:1.1;margin:0 0 16px;font-weight:800}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{max-width:620px;margin:0 auto 28px;color:var(--muted);font-size:18px}
+  .btn{display:inline-block;padding:14px 26px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06210f;font-weight:700;text-decoration:none;border:0;font-size:16px}
+  .btn:hover{filter:brightness(1.08)}
+  .btn.ghost{background:none;border:1px solid var(--line);color:var(--text);margin-left:8px}
+  .small{color:var(--muted);font-size:13px;margin-top:14px}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:26px;margin:0 0 20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{margin:0 0 6px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  ol.steps{padding-left:20px;margin:0}
+  ol.steps li{margin:8px 0}
+  code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:14px}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 0;color:var(--muted)}
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .plan h3{margin:0 0 4px}
+  .plan ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px;text-align:center}
+  [data-l]{display:none}
+  html[lang="uz"] [data-l="uz"],html[lang="ru"] [data-l="ru"],html[lang="en"] [data-l="en"]{display:revert}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><img src="logo.png" alt="FlexVid logo" width="34" height="34">Flex<span>Vid</span></div>
+    <div class="nav-right">
+      <a class="l" href="#how"><span data-l="uz">Qanday ishlaydi</span><span data-l="ru">Как работает</span><span data-l="en">How it works</span></a>
+      <a class="l" href="#faq">FAQ</a>
+      <a class="l" href="#privacy"><span data-l="uz">Maxfiylik</span><span data-l="ru">Конфиденциальность</span><span data-l="en">Privacy</span></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-set="uz" class="on">UZ</button>
+        <button data-set="ru">RU</button>
+        <button data-set="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>
+      <span data-l="uz">Videoni <em>kesmasdan</em> siqing</span>
+      <span data-l="ru">Сжимайте видео <em>без обрезки</em></span>
+      <span data-l="en">Shrink video <em>without cutting</em> it</span>
+    </h1>
+    <p>
+      <span data-l="uz">FlexVid bloggerlar va kontent yaratuvchilar uchun: video hajmini kichraytiradi va formatini o'zgartiradi. Videolaringiz kompyuteringizdan chiqmaydi.</span>
+      <span data-l="ru">FlexVid для блогеров и создателей контента: уменьшает размер видео и меняет формат. Ваши видео не покидают компьютер.</span>
+      <span data-l="en">FlexVid is for bloggers and content creators: it reduces video size and converts formats. Your videos never leave your computer.</span>
+    </p>
+    <a class="btn" id="dl" href="https://github.com/ibrohim363/flexvid-site/releases/latest">
+      <span data-l="uz">Windows uchun yuklab olish</span>
+      <span data-l="ru">Скачать для Windows</span>
+      <span data-l="en">Download for Windows</span>
+    </a>
+    <a class="btn ghost" href="#how"><span data-l="uz">Batafsil</span><span data-l="ru">Подробнее</span><span data-l="en">Learn more</span></a>
+    <div class="small">
+      <span data-l="uz">Windows 10/11 · Java 11 yoki yangisi kerak · Bepul rejim mavjud</span>
+      <span data-l="ru">Windows 10/11 · Нужна Java 11 или новее · Есть бесплатный режим</span>
+      <span data-l="en">Windows 10/11 · Requires Java 11 or newer · Free mode available</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="grid">
+      <div class="card">
+        <h3><span data-l="uz">Hajm tanlang</span><span data-l="ru">Выберите размер</span><span data-l="en">Pick a size</span></h3>
+        <p><span data-l="uz">Natija necha MB bo'lishini o'zingiz belgilaysiz, dastur shunga moslab siqadi.</span><span data-l="ru">Вы задаёте желаемый размер в МБ, программа подбирает сжатие.</span><span data-l="en">Set the target size in MB and FlexVid fits the video to it.</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-l="uz">Format va o'lcham</span><span data-l="ru">Формат и разрешение</span><span data-l="en">Format and resolution</span></h3>
+        <p><span data-l="uz">MP4, MKV, AVI, WebM va boshqalar. Piksel o'lchamini ham o'zgartirasiz.</span><span data-l="ru">MP4, MKV, AVI, WebM и другие. Можно менять разрешение.</span><span data-l="en">MP4, MKV, AVI, WebM and more. Change the resolution too.</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-l="uz">Kesilmaydi</span><span data-l="ru">Без обрезки</span><span data-l="en">No cutting</span></h3>
+        <p><span data-l="uz">Video to'liq uzunligicha qoladi, faqat hajmi kichrayadi.</span><span data-l="ru">Видео остаётся полной длины, уменьшается только размер.</span><span data-l="en">The video keeps its full length; only the file size shrinks.</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-l="uz">Lokal ishlaydi</span><span data-l="ru">Работает локально</span><span data-l="en">Runs locally</span></h3>
+        <p><span data-l="uz">Hamma ish sizning kompyuteringizda bajariladi. Hech narsa serverga yuklanmaydi.</span><span data-l="ru">Вся обработка на вашем компьютере. Ничего не загружается на сервер.</span><span data-l="en">All processing happens on your PC. Nothing is uploaded to a server.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2><span data-l="uz">Qanday ishlaydi</span><span data-l="ru">Как это работает</span><span data-l="en">How it works</span></h2>
+    <ol class="steps" data-l="uz">
+      <li>FlexVid'ni yuklab oling va papkaga chiqaring.</li>
+      <li>FFmpeg'ni o'rnating: papkadagi <code>setup-ffmpeg.ps1</code> ni ishga tushiring (bir marta).</li>
+      <li><code>FlexVid.jar</code> ni ikki marta bosing.</li>
+      <li>Videoni tanlang, hajm va formatni belgilang, <b>Boshlash</b> ni bosing.</li>
+    </ol>
+    <ol class="steps" data-l="ru">
+      <li>Скачайте FlexVid и распакуйте в папку.</li>
+      <li>Установите FFmpeg: запустите <code>setup-ffmpeg.ps1</code> из папки (один раз).</li>
+      <li>Дважды щёлкните <code>FlexVid.jar</code>.</li>
+      <li>Выберите видео, задайте размер и формат, нажмите <b>Старт</b>.</li>
+    </ol>
+    <ol class="steps" data-l="en">
+      <li>Download FlexVid and extract it to a folder.</li>
+      <li>Install FFmpeg: run <code>setup-ffmpeg.ps1</code> from the folder (one time).</li>
+      <li>Double-click <code>FlexVid.jar</code>.</li>
+      <li>Pick a video, set size and format, then press <b>Start</b>.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span data-l="uz">Rejalar</span><span data-l="ru">Режимы</span><span data-l="en">Modes</span></h2>
+    <div class="plans">
+      <div class="card plan">
+        <h3><span data-l="uz">Bepul</span><span data-l="ru">Бесплатный</span><span data-l="en">Free</span></h3>
+        <ul data-l="uz"><li>Barcha asosiy imkoniyatlar</li><li>Natija ~90 soniyadan keyin tayyor bo'ladi</li><li>Reklama ko'rsangiz, kutish qisqaradi</li></ul>
+        <ul data-l="ru"><li>Все основные функции</li><li>Результат готов примерно через 90 секунд</li><li>Просмотр рекламы сокращает ожидание</li></ul>
+        <ul data-l="en"><li>All core features</li><li>Result is ready after about 90 seconds</li><li>Watching an ad shortens the wait</li></ul>
+      </div>
+      <div class="card plan">
+        <h3>Premium</h3>
+        <ul data-l="uz"><li>Kutishsiz</li><li>Reklamasiz</li><li>Loyihani qo'llab-quvvatlaydi</li></ul>
+        <ul data-l="ru"><li>Без ожидания</li><li>Без рекламы</li><li>Поддержка проекта</li></ul>
+        <ul data-l="en"><li>No waiting</li><li>No ads</li><li>Supports the project</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+
+    <details><summary><span data-l="uz">Videoning sifati yomonlashadimi?</span><span data-l="ru">Ухудшится ли качество?</span><span data-l="en">Will quality drop?</span></summary>
+      <p><span data-l="uz">Ha, hajm kichrayganda sifat ma'lum darajada tushadi. Bu har qanday siqishda shunday. Hajmni qanchalik kichik tanlasangiz, farq shunchalik sezilarli bo'ladi. Siqilgan videodan asl nusxani qayta tiklab bo'lmaydi, shuning uchun asl faylni saqlab qo'ying.</span><span data-l="ru">Да, при уменьшении размера качество немного падает, это свойственно любому сжатию. Чем меньше целевой размер, тем заметнее разница. Оригинал из сжатого видео восстановить нельзя, поэтому сохраняйте исходный файл.</span><span data-l="en">Yes, shrinking the file costs some quality, as with any compression. The smaller the target, the more visible it is. The original cannot be restored from a compressed video, so keep your source file.</span></p>
+    </details>
+
+    <details><summary><span data-l="uz">Videolarim serverga yuklanadimi?</span><span data-l="ru">Загружаются ли видео на сервер?</span><span data-l="en">Are my videos uploaded?</span></summary>
+      <p><span data-l="uz">Yo'q. Siqish butunlay sizning kompyuteringizda, FFmpeg yordamida bajariladi.</span><span data-l="ru">Нет. Сжатие полностью выполняется на вашем компьютере с помощью FFmpeg.</span><span data-l="en">No. Compression runs entirely on your computer using FFmpeg.</span></p>
+    </details>
+
+    <details><summary><span data-l="uz">Windows "noma'lum dastur" deb ogohlantirsa?</span><span data-l="ru">Windows предупреждает о неизвестной программе?</span><span data-l="en">Windows warns about an unknown app?</span></summary>
+      <p><span data-l="uz">FlexVid yangi va hali raqamli imzolanmagan, shuning uchun Windows yoki brauzer ogohlantirishi mumkin. Dasturni faqat shu sahifadagi rasmiy havoladan yuklab oling.</span><span data-l="ru">FlexVid новый и пока не имеет цифровой подписи, поэтому Windows или браузер могут показать предупреждение. Скачивайте программу только по официальной ссылке с этой страницы.</span><span data-l="en">FlexVid is new and not code-signed yet, so Windows or your browser may show a warning. Download it only from the official link on this page.</span></p>
+    </details>
+
+    <details><summary><span data-l="uz">Java kerakmi?</span><span data-l="ru">Нужна ли Java?</span><span data-l="en">Do I need Java?</span></summary>
+      <p><span data-l="uz">Ha, hozircha Java 11 yoki yangisi o'rnatilgan bo'lishi kerak. Keyingi versiyalarda hammasi bitta o'rnatuvchida bo'ladi.</span><span data-l="ru">Да, пока нужна установленная Java 11 или новее. В следующих версиях всё будет в одном установщике.</span><span data-l="en">Yes, for now you need Java 11 or newer installed. Later versions will ship as a single installer.</span></p>
+    </details>
+
+    <details><summary><span data-l="uz">FFmpeg nima?</span><span data-l="ru">Что такое FFmpeg?</span><span data-l="en">What is FFmpeg?</span></summary>
+      <p><span data-l="uz">FFmpeg: videoni qayta ishlash uchun keng tarqalgan ochiq dastur. FlexVid uni ichida ishlatadi. U alohida loyiha va o'z litsenziyasiga ega.</span><span data-l="ru">FFmpeg: распространённая открытая программа для обработки видео. FlexVid использует её внутри. Это отдельный проект со своей лицензией.</span><span data-l="en">FFmpeg is a widely used open-source video tool that FlexVid uses under the hood. It is a separate project with its own license.</span></p>
+    </details>
+  </section>
+
+  <section id="privacy">
+    <h2><span data-l="uz">Maxfiylik siyosati</span><span data-l="ru">Политика конфиденциальности</span><span data-l="en">Privacy policy</span></h2>
+    <p data-l="uz">FlexVid sizning videolaringizni, fayl nomlaringizni yoki shaxsiy ma'lumotlaringizni serverga yubormaydi va to'plamlaydi. Barcha qayta ishlash kompyuteringizda bajariladi. Bepul rejimda ko'rsatiladigan reklamalar dastur yonidagi fayllardan olinadi. Bu siyosat o'zgarsa, shu sahifada e'lon qilinadi.</p>
+    <p data-l="ru">FlexVid не отправляет и не собирает ваши видео, имена файлов или личные данные. Вся обработка выполняется на вашем компьютере. Реклама в бесплатном режиме берётся из файлов рядом с программой. Если политика изменится, мы сообщим об этом на этой странице.</p>
+    <p data-l="en">FlexVid does not send or collect your videos, file names or personal data. All processing happens on your computer. Ads shown in free mode are read from files next to the app. If this policy changes, it will be announced on this page.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="y"></span> FlexVid ·
+    <a href="https://github.com/ibrohim363/flexvid-site/issues"><span data-l="uz">Savol yoki xato haqida xabar bering</span><span data-l="ru">Вопросы и сообщения об ошибках</span><span data-l="en">Questions and bug reports</span></a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement, ok=['uz','ru','en'];
+  function set(l){
+    if(ok.indexOf(l)<0) l='uz';
+    html.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('on', b.dataset.set===l); });
+    try{ localStorage.setItem('fv_lang', l); }catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ set(b.dataset.set); });
+  });
+  var saved=null; try{ saved=localStorage.getItem('fv_lang'); }catch(e){}
+  if(!saved){
+    var n=(navigator.language||'uz').slice(0,2).toLowerCase();
+    saved = n==='ru' ? 'ru' : n==='en' ? 'en' : 'uz';
+  }
+  set(saved);
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
